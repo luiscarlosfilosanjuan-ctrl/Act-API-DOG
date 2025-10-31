@@ -1,0 +1,223 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background 0.25s, color 0.25s;
+}
+
+body.light {
+  background: #f0f0f0;
+  color: #222;
+}
+
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+
+body.nature {
+  background: #ccf0b4;
+  color: #1b3b1b;
+}
+
+
+header {
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  background: #ffcc00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+
+body.dark header { background: #333; }
+body.nature header { background: #7ac97a; }
+
+
+#title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  transition: color .25s;
+}
+body.dark #title { color: #fff; }
+body.nature #title { color: #0d2e0d; }
+
+
+.top-right {
+  position: absolute;
+  right: 1rem;
+  top: 0.9rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.theme-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.theme-btn:hover { background: rgba(0,0,0,0.08); }
+
+.filters {
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-wrap {
+  position: relative;
+  width: 320px;
+}
+
+#breedSearch {
+  width: 100%;
+  padding: 0.55rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.suggestions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  max-height: 280px;
+  overflow: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 40;
+}
+
+body.dark .suggestions { background: #1b1b1b; border-color: rgba(255,255,255,0.06); }
+body.nature .suggestions { background: #f0faef; border-color: #a6d8a1; }
+
+.suggestions li {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.suggestions li:hover { background: rgba(0,0,0,0.05); }
+body.dark .suggestions li:hover { background: rgba(255,255,255,0.03); }
+body.nature .suggestions li:hover { background: rgba(100,180,100,0.1); }
+
+.suggestions img.preview {
+  width: 40px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+body.dark .card { background: #1b1b1b; color: #eee; }
+body.nature .card {
+  background: #f5fff4;
+  color: #1b3b1b;
+  box-shadow: 0 2px 6px rgba(34,139,34,0.2);
+}
+body.nature .card:hover {
+  transform: scale(1.02);
+}
+
+.card img { width: 100%; height: 180px; object-fit: cover; }
+.card p { margin: 0; padding: .6rem; font-weight: bold; }
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  display:flex; justify-content:center; align-items:center;
+  background: rgba(0,0,0,0.6);
+  z-index: 80;
+}
+.modal.hidden { display: none; }
+
+.modal-content {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 520px;
+  width: 95%;
+  text-align: center;
+  position: relative;
+}
+body.dark .modal-content { background: #222; color:#fff; }
+body.nature .modal-content { background: #f5fff4; color:#1b3b1b; }
+
+#closeModal {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.hidden { display: none; }
+
+#historyContent {
+  max-width: 420px;
+}
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+#historyList li {
+  padding: 6px 8px;
+  border-bottom: 1px solid #ccc;
+}
+#clearHistory {
+  margin-top: 10px;
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: .4rem .8rem;
+  cursor: pointer;
+}
+#clearHistory:hover {
+  background-color: #e53935;
+}
+#closeHistory {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}

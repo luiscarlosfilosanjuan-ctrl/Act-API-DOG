@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería de Perros 🐶</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light">
+  <header>
+    <h1 id="title">Galería de Perros 🐾</h1>
+
+    <div class="top-right">
+      <button class="theme-btn" id="btnLight" title="Modo claro">🌞</button>
+      <button class="theme-btn" id="btnDark" title="Modo oscuro">🌙</button>
+      <button class="theme-btn" id="btnNature" title="Modo naturaleza">🌿</button>
+    </div>
+
+    <div class="filters">
+      <div class="search-wrap">
+        <input type="text" id="breedSearch" placeholder="Buscar raza..." autocomplete="off" />
+        <ul id="suggestions" class="suggestions hidden"></ul>
+      </div>
+
+      <select id="imageCount">
+        <option value="6">6 imágenes</option>
+        <option value="12" selected>12 imágenes</option>
+        <option value="24">24 imágenes</option>
+      </select>
+
+      <button id="loadImages">Buscar</button>
+      <button id="viewHistory">Ver historial</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="gallery" class="gallery"></div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <img id="modalImg" src="" alt="Perro" />
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <div id="historyModal" class="modal hidden">
+    <div class="modal-content" id="historyContent">
+      <span id="closeHistory">&times;</span>
+      <h2>Historial de búsquedas</h2>
+      <ul id="historyList"></ul>
+      <button id="clearHistory">Borrar historial</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
